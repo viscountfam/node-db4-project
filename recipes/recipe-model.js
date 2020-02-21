@@ -4,7 +4,9 @@ module.exports = {
     findById,
     add,
     update,
-    remove
+    remove,
+    findingredient,
+    finddirection
 }
 
 function find(){
@@ -32,4 +34,14 @@ function remove(id) {
     return db('recipes')
     .where({id})
     .del()
+}
+
+function findingredient(recipe_id) {
+    return db('ingredients')
+    .where({recipe_id})
+}
+
+function finddirection(recipe_id) {
+    return db('directions')
+    .where({recipe_id})
 }
